@@ -1,0 +1,26 @@
+ {% extends 'films/layouts.html' %}
+
+{% block title %}
+	<title>Страница для добавления Фильмов</title>
+{% endblock %}
+
+<body>
+{% block content %}
+<h2>Форма для добавления Фильмов</h2>
+<div>
+	<form method="post" >
+        {% csrf_token %}
+		{{ form.title }}<br>
+		{{ form.autor }}<br>
+		{{ form.short_description }}<br>
+		{{ form.text }}<br>
+		<input type="date"> <br>
+		<input type="time"> <br>
+		{{ form.pub_date }}
+		<button type="submit">Добавить Film</button>
+	</form>
+	<p>{{error}}</p>
+</div>
+{% endblock %}
+</body>
+</html>
